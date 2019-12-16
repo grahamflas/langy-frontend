@@ -9,25 +9,28 @@ function App( props ) {
   return (
     <div className="App">
 
+      {props.currentUser.username ? <Redirect to={"/"} /> : <Redirect to={"/login"} />}
+
       <Route exact path="/login">
         < Login />
       </Route>
 
-      { 
-        props.currentUser.username ? (
-          <div>render some stuff</div>
-        ) : (
-          <Redirect to={"/login"} />
-        )
-      }
+      <Route exact path="/">
+        <div>
+          < NavBar />
+        </div>
+      </Route>
+
+      
 
     </div>
   );
 }
 
+
+
 const mapStateToProps = state => ({
   currentUser: state.currentUser
 })
-
 
 export default connect( mapStateToProps )(App);
