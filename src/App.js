@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Route, Switch, Redirect, withRouter, Link } from 'react-router-dom'
 import NavBar from './Components/NavBar';
 import Login from './Components/Login';
-import Languages from './Components/Languages';
+import Languages from './Containers/Languages';
 
 function App( props ) {
   return (
@@ -35,4 +35,5 @@ const mapStateToProps = state => ({
   currentUser: state.currentUser
 })
 
+export const BASE_URL = "http://localhost:3000/"
 export default connect( mapStateToProps )(App);
