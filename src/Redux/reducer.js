@@ -1,4 +1,4 @@
-import { combineReducers, bindActionCreators } from 'redux';
+import { combineReducers } from 'redux';
 
 const currentUserReducer = ( oldState={}, action ) => {
   switch( action.type ){

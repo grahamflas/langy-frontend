@@ -1,15 +1,33 @@
 import React from 'react';
 import './Assets/App.css';
+import { connect } from 'react-redux'
+import { Route, Switch, Redirect, withRouter, Link } from 'react-router-dom'
 import NavBar from './Components/NavBar';
 import Login from './Components/Login';
 
-function App() {
+function App( props ) {
   return (
     <div className="App">
-      < NavBar />
-      < Login />
+
+      <Route exact path="/login">
+        < Login />
+      </Route>
+
+      { 
+        props.currentUser.username ? (
+          <div>render some stuff</div>
+        ) : (
+          <Redirect to={"/login"} />
+        )
+      }
+
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  currentUser: state.currentUser
+})
+
+
+export default connect( mapStateToProps )(App);
