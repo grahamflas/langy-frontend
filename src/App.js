@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Route, Switch, Redirect, withRouter, Link } from 'react-router-dom'
 import NavBar from './Components/NavBar';
 import Login from './Components/Login';
-import Languages from './Components/Languages';
+import LanguagesContainer from './Containers/LanguagesContainer';
 
 function App( props ) {
   return (
@@ -19,7 +19,7 @@ function App( props ) {
       <Route exact path="/">
         <div>
           < NavBar />
-          < Languages />
+          < LanguagesContainer />
         </div>
       </Route>
 
