@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Route, Switch, Redirect, withRouter, Link } from 'react-router-dom'
 import NavBar from './Components/NavBar';
 import Login from './Components/Login';
-import Languages from './Containers/Languages';
+import Languages from './Components/Languages';
 
 function App( props ) {
   return (

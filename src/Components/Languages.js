@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { BASE_URL } from '../App'
 
 class Languages extends React.Component{
@@ -22,7 +23,13 @@ class Languages extends React.Component{
       <div>
         <h1>Select a language:</h1>
         { 
-          this.state.languages.forEach( lang => {return <div>{lang.name}</div>} ) 
+          this.state.languages.map( lang => {
+            return (
+              <Link>
+                <div>{lang.name}</div>
+              </Link>
+            )
+          } ) 
         }
       </div>
     )
