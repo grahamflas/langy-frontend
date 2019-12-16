@@ -1,5 +1,16 @@
-import { combineReducers } from 'redux';
+import { combineReducers, bindActionCreators } from 'redux';
 
-const rootReducer = combineReducers( {} )
+const currentUserReducer = ( oldState={}, action ) => {
+  switch( action.type ){
+    case "FETCH_USER":
+      return action.payload
+    default:
+      return oldState;
+  }
+}
+
+const rootReducer = combineReducers( {
+  currentUser: currentUserReducer
+} )
 
 export default rootReducer;

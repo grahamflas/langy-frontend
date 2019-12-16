@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { fetchingUser } from '../Redux/actions'
 
 class Login extends React.Component {
   constructor() {
@@ -21,7 +23,7 @@ class Login extends React.Component {
       username: this.state.username,
       password: this.state.password
     }
-    debugger
+    this.props.fetchingUser( userInfo )
   }
 
   render(){
@@ -52,4 +54,8 @@ class Login extends React.Component {
 
 }
 
-export default Login
+const mapDispatchToProps = dispatch => ( {
+  fetchingUser: (userInfo) => { dispatch( fetchingUser(userInfo) ) }
+} )
+
+export default connect( null, mapDispatchToProps )(Login)
