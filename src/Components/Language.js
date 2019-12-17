@@ -2,12 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { BASE_URL } from '../App'
+import { setLanguage } from '../Redux/actions'
 
 
 class Language extends React.Component{
   
 
   clickHandler = () => {
+    this.props.setLanguage(this.props.lang)
+
     let data = {
       user_id: this.props.currentUser.id, 
       language_id: this.props.lang.id
@@ -26,8 +29,9 @@ class Language extends React.Component{
   }
 
   render(){
+    console.log(this.props)
     return(
-      <div onClick={this.clickHandler}>
+      <div onClick={this.clickHandler} >
         <Link to={`/decks/${this.props.lang.slug}`}>
           {this.props.lang.name}
         </Link>
@@ -40,4 +44,9 @@ const mapStateToProps = state => ({
   currentUser: state.currentUser
 })
 
-export default connect(mapStateToProps)(Language)
+const mapDispatchToProps = dispatch => ( {
+  setLanguage: (langObj) => { dispatch( setLanguage(langObj) ) }
+} )
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Language)

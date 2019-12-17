@@ -1,7 +1,7 @@
 import React from 'react';
 import './Assets/App.css';
 import { connect } from 'react-redux'
-import { Route, Switch, Redirect, withRouter, Link } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import NavBar from './Components/NavBar';
 import Login from './Components/Login';
 import LanguagesContainer from './Containers/LanguagesContainer';
