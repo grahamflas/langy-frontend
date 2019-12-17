@@ -25,7 +25,7 @@ class Language extends React.Component{
       body: JSON.stringify( data )
     } )
       .then( resp => resp.json() )
-      .then( whoDis => console.log( whoDis ) )
+      .then( whoDis => console.log( whoDis ) ) //SAVE THESE TO THE STORE STATE
   }
 
   render(){

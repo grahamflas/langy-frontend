@@ -19,6 +19,5 @@ export function fetchingUser(userInfo) {
 
 export function setLanguage(langObj){
   console.log("in setLanguage()")
-  debugger
   return { type: "SET_LANGUAGE", payload: langObj }
 }
