@@ -5,27 +5,33 @@ import { Route, Switch, Redirect, withRouter, Link } from 'react-router-dom'
 import NavBar from './Components/NavBar';
 import Login from './Components/Login';
 import LanguagesContainer from './Containers/LanguagesContainer';
+import DeckContainer from './Containers/DeckContainer';
 
 function App( props ) {
   return (
-    <div className="App">
+      <div className="App">
+  
+        {props.currentUser.username ? <Redirect to={"/"} /> : <Redirect to={"/login"} />}
+  
+        <Route exact path="/login">
+          < Login />
+        </Route>
+  
+        <Route exact path="/">
+          <div>
+            < NavBar />
+            < LanguagesContainer />
+          </div>
+        </Route>
 
-      {props.currentUser.username ? <Redirect to={"/"} /> : <Redirect to={"/login"} />}
+        < Route path="/decks">
+          <div>
+            < NavBar />
+            < DeckContainer />
+          </div>
+        </Route>
 
-      <Route exact path="/login">
-        < Login />
-      </Route>
-
-      <Route exact path="/">
-        <div>
-          < NavBar />
-          < LanguagesContainer />
-        </div>
-      </Route>
-
-      
-
-    </div>
+      </div>
   );
 }
 
