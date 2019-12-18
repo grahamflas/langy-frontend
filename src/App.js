@@ -21,12 +21,10 @@ function App( props ) {
 
         <Route exact path="/languages"  component={LanguagesContainer} />
         <Route exact path="/decks/:language/:category" component={CardContainer} />
-        < Route exact path="/decks/:language" component={DeckContainer} />
+        <Route exact path="/decks/:language" component={DeckContainer} />
       </div>
   );
 }
-
-
 
 const mapStateToProps = state => ({
   currentUser: state.currentUser

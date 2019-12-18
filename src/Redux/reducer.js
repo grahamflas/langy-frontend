@@ -27,10 +27,20 @@ const userWordsReducer = ( oldState = [], action ) => {
   }
 }
 
+const selectedDeckReducer = ( oldState={}, action ) => {
+  switch( action.type ){
+    case( "SET_DECK" ):
+      return action.payload
+    default:
+      return oldState
+  }
+}
+
 const rootReducer = combineReducers( {
   currentUser: currentUserReducer,
+  userWords: userWordsReducer,
   selectedLanguage: selectedLanguageReducer,
-  userWords: userWordsReducer
+  selectedDeck: selectedDeckReducer
 } )
 
 export default rootReducer;
