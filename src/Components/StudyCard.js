@@ -36,7 +36,6 @@ class StudyCard extends React.Component {
 
   render(){
     const { deckWords } = this.props
-    console.log("deckWords", deckWords)
 
     {/* for a split second, we're rendering the previous deck. Fix this */}
     return(
