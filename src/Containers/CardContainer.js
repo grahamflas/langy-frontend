@@ -2,6 +2,7 @@ import React from 'react'
 import { BASE_URL } from '../App'
 import { connect } from 'react-redux'
 import { setDeckWords } from '../Redux/actions'
+import StudyCard from '../Components/StudyCard'
 
 class CardContainer extends React.Component{
 
@@ -25,7 +26,7 @@ class CardContainer extends React.Component{
   render(){
     return (
       <div>
-        In CardContainer
+        <StudyCard />
       </div>
     )
   }
