@@ -25,7 +25,7 @@ class Language extends React.Component{
       body: JSON.stringify( data )
     } )
       .then( resp => resp.json() )
-      .then( wordsArray => this.props.setUserWords( wordsArray ) ) //SAVE THESE TO THE STORE STATE
+      .then( wordsArray => this.props.setUserWords( wordsArray ) )
   }
 
   render(){

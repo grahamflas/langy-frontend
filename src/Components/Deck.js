@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class Deck extends React.Component {
 
@@ -6,7 +7,10 @@ class Deck extends React.Component {
     let { category } = this.props.deckObj
     return (
       <div>
-        {category}
+        {/* `/decks/${this.props.lang.slug}` */}
+        <Link>
+          {category}
+        </Link>
       </div>
     )
   }
