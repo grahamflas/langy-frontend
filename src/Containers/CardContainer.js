@@ -18,6 +18,8 @@ class CardContainer extends React.Component{
       }, 
       body: JSON.stringify( data )
     } )
+      .then( resp => resp.json() )
+      .then( wordsArray => console.log( wordsArray ) )
   }
   render(){
     return (
