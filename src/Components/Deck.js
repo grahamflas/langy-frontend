@@ -1,13 +1,7 @@
 import React from 'react'
-// import { BrowserRouter, Route, Link, withRouter } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 
 class Deck  extends React.Component {
-  // constructor( props ){
-  //   super( props )
-  // }
-
-  
   clickHandler = () => {
     let { pathname } = this.props.history.location
     let { slug } = this.props.deckObj
