@@ -3,26 +3,33 @@ import { connect } from 'react-redux'
 
 class StudyCard extends React.Component {
 
+  cardBackwards = () => {}
+  
+  cardForwards = () => {}
+
   render(){
     const { deckWords } = this.props
+    console.log("deckWords", deckWords)
 
     let currentCard = 0
 
-
-
     return(
       <div>
-
-        <div className="ui card">
-
-        </div>
-
-        <div>
-          <button> - </button>
-            {currentCard+1} of {deckWords.length}
-          <button> + </button>
-        </div>
-
+        { deckWords.length > 0 ? (
+          <div>
+            <div className="ui card">
+              <h1>{deckWords[currentCard].word_target_language}</h1>
+              { deckWords[currentCard].pronunciation ? (<p><em>{deckWords[currentCard].pronunciation}</em></p>) : null }
+              <p>{deckWords[currentCard].word_english}</p>
+            </div>
+  
+            <div>
+              <button onClick={() => this.cardBackwards(currentCard)}> - </button>
+                {currentCard+1} of {deckWords.length}
+              <button onClick={() => this.cardForwards(currentCard)}> + </button>
+            </div>
+          </div>
+        ) : null }
       </div>
     )
   }
