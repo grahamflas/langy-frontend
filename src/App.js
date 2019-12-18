@@ -11,13 +11,15 @@ import CardContainer from './Containers/CardContainer';
 function App( props ) {
   return (
       <div className="App">
-  
-        { props.currentUser.username ? <NavBar/> : null }
-        {props.currentUser.username ? <Redirect to={"/"} /> : <Redirect to={"/login"} />}
-  
+        {/* redirect to login */}
+        {props.currentUser.username ? <Redirect to={"/languages"} /> : <Redirect to={"/login"} />}
         <Route exact path="/login" component={Login} />
-        
-        <Route exact path="/"  component={LanguagesContainer} />
+  
+        {/* show NavBar on all pages if logged in */}
+        { props.currentUser.username ? <NavBar/> : null }
+  
+
+        <Route exact path="/languages"  component={LanguagesContainer} />
         <Route exact path="/decks/:language/:category" component={CardContainer} />
         < Route exact path="/decks/:language" component={DeckContainer} />
       </div>

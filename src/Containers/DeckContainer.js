@@ -13,7 +13,6 @@ class DeckContainer extends React.Component {
 
   componentDidMount(){
     let data = {language_id: this.props.selectedLanguage.id}
-    console.log(data)
 
     fetch( `${BASE_URL}/get_decks`, {
       method: "POST",
@@ -32,7 +31,7 @@ class DeckContainer extends React.Component {
   render(){
     return(
       <div>
-        { this.state.decks.map( deckObj => < Deck deckObj={deckObj}/> ) }
+        { this.state.decks.map( deckObj => < Deck key={deckObj.category} deckObj={deckObj}/> ) }
       </div>
     )
   }

@@ -6,15 +6,18 @@ class Deck  extends React.Component {
     super( props )
   }
 
-  showDeckCards = ( event ) => {
-    console.log( this.props )
-    this.props.history.push(`${this.props.history.location.pathname}/${this.props.deckObj.category}`)
+  
+  clickHandler = () => {
+    let { pathname } = this.props.history.location
+    let { slug } = this.props.deckObj
+
+    this.props.history.push(`${pathname}/${slug}`)
   }
   
   render() {
     let { category } = this.props.deckObj
     return (
-      <div className="ui card" onClick={(event) => this.showDeckCards(event)}>
+      <div className="ui card" onClick={() => this.clickHandler()}>
           {category}
       </div>
     )
