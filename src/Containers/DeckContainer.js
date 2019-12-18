@@ -1,8 +1,15 @@
 import React from 'react'
 import { BASE_URL } from '../App'
 import { connect } from 'react-redux'
+import Deck from '../Components/Deck'
 
 class DeckContainer extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      decks: []
+    }
+  }
 
   componentDidMount(){
     let data = {language_id: this.props.selectedLanguage.id}
@@ -17,13 +24,15 @@ class DeckContainer extends React.Component {
       body: JSON.stringify( data )
     } )
       .then( resp => resp.json() )
-      .then( whoDis => console.log(whoDis) )
+      .then( deckArray => this.setState( {
+        decks: deckArray
+      } ) )
   }
 
   render(){
     return(
       <div>
-        Deck Container
+        { this.state.decks.map( deckObj => < Deck deckObj={deckObj}/> ) }
       </div>
     )
   }
