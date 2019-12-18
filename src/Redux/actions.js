@@ -28,3 +28,7 @@ export function setUserWords(wordsArray){
 export function setDeck(deckObj){
   return { type: "SET_DECK", payload: deckObj }
 }
+
+export function setDeckWords(wordsArray){
+  return { type: "SET_DECK_WORDS", payload: wordsArray }
+}

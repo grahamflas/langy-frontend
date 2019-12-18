@@ -1,6 +1,7 @@
 import React from 'react'
 import { BASE_URL } from '../App'
 import { connect } from 'react-redux'
+import { setDeckWords } from '../Redux/actions'
 
 class CardContainer extends React.Component{
 
@@ -19,7 +20,7 @@ class CardContainer extends React.Component{
       body: JSON.stringify( data )
     } )
       .then( resp => resp.json() )
-      .then( wordsArray => console.log( wordsArray ) )
+      .then( wordsArray => this.props.setDeckWords( wordsArray ) )
   }
   render(){
     return (
@@ -34,4 +35,8 @@ const mapStateToProps = state => ({
   selectedLanguageId: state.selectedLanguage.id,
   selectedDeckId: state.selectedDeck.id
 })
-export default connect(mapStateToProps) (CardContainer)
+
+const mapDispatchToProps = dispatch => ( {
+  setDeckWords: (wordsArray) => { dispatch( setDeckWords( wordsArray ) ) }
+} )
+export default connect(mapStateToProps, mapDispatchToProps) (CardContainer)
