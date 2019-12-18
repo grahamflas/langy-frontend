@@ -1,10 +1,11 @@
 import React from 'react'
-import { BrowserRouter, Route, Link, withRouter } from 'react-router-dom'
+// import { BrowserRouter, Route, Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class Deck  extends React.Component {
-  constructor( props ){
-    super( props )
-  }
+  // constructor( props ){
+  //   super( props )
+  // }
 
   
   clickHandler = () => {
