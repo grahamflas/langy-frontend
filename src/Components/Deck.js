@@ -14,8 +14,7 @@ class Deck  extends React.Component {
   render() {
     let { category } = this.props.deckObj
     return (
-      <div onClick={(event) => this.showDeckCards(event)}>
-        {/* `/decks/${this.props.lang.slug}` */}
+      <div className="ui card" onClick={(event) => this.showDeckCards(event)}>
           {category}
       </div>
     )
