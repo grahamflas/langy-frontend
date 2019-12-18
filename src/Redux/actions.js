@@ -18,6 +18,9 @@ export function fetchingUser(userInfo) {
 }
 
 export function setLanguage(langObj){
-  console.log("in setLanguage()")
   return { type: "SET_LANGUAGE", payload: langObj }
+}
+
+export function setUserWords(wordsArray){
+  return { type: "SET_USERWORDS", payload: wordsArray }
 }

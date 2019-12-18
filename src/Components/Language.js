@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { BASE_URL } from '../App'
-import { setLanguage } from '../Redux/actions'
+import { setLanguage, setUserWords } from '../Redux/actions'
 
 
 class Language extends React.Component{
@@ -25,7 +25,7 @@ class Language extends React.Component{
       body: JSON.stringify( data )
     } )
       .then( resp => resp.json() )
-      .then( whoDis => console.log( whoDis ) ) //SAVE THESE TO THE STORE STATE
+      .then( wordsArray => this.props.setUserWords( wordsArray ) ) //SAVE THESE TO THE STORE STATE
   }
 
   render(){
@@ -44,7 +44,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ( {
-  setLanguage: (langObj) => { dispatch( setLanguage(langObj) ) }
+  setLanguage: (langObj) => { dispatch( setLanguage(langObj) ) }, 
+  setUserWords: (wordsArray) => { dispatch( setUserWords( wordsArray ) ) }
 } )
 
 

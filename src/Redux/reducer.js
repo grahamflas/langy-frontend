@@ -18,9 +18,19 @@ const selectedLanguageReducer = ( oldState={}, action ) => {
   }
 }
 
+const userWordsReducer = ( oldState = [], action ) => {
+  switch( action.type ){
+    case ("SET_USERWORDS"):
+      return action.payload
+    default: 
+      return oldState;
+  }
+}
+
 const rootReducer = combineReducers( {
   currentUser: currentUserReducer,
-  selectedLanguage: selectedLanguageReducer
+  selectedLanguage: selectedLanguageReducer,
+  userWords: userWordsReducer
 } )
 
 export default rootReducer;
