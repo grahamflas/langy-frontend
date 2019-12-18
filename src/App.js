@@ -6,31 +6,20 @@ import NavBar from './Components/NavBar';
 import Login from './Components/Login';
 import LanguagesContainer from './Containers/LanguagesContainer';
 import DeckContainer from './Containers/DeckContainer';
+import CardContainer from './Containers/CardContainer';
 
 function App( props ) {
   return (
       <div className="App">
   
+        { props.currentUser.username ? <NavBar/> : null }
         {props.currentUser.username ? <Redirect to={"/"} /> : <Redirect to={"/login"} />}
   
-        <Route exact path="/login">
-          < Login />
-        </Route>
-  
-        <Route exact path="/">
-          <div>
-            < NavBar />
-            < LanguagesContainer />
-          </div>
-        </Route>
+        <Route exact path="/login" component={Login} />
         
-        < Route path="/decks">
-          <div>
-            < NavBar />
-            < DeckContainer />
-          </div>
-        </Route>
-
+        <Route exact path="/"  component={LanguagesContainer} />
+        <Route exact path="/decks/:language/:category" component={CardContainer} />
+        < Route exact path="/decks/:language" component={DeckContainer} />
       </div>
   );
 }
