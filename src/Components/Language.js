@@ -16,7 +16,7 @@ class Language extends React.Component{
       language_id: this.props.lang.id
     }
 
-    fetch( `${BASE_URL}/user_language`, {
+    fetch( `${BASE_URL}/get_words`, {
       method: "POST", 
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,6 @@ class Language extends React.Component{
   }
 
   render(){
-    console.log(this.props)
     return(
       <div onClick={this.clickHandler} >
         <Link to={`/decks/${this.props.lang.slug}`}>
