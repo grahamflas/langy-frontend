@@ -3,6 +3,7 @@ import { BASE_URL } from '../App'
 import { connect } from 'react-redux'
 import { setDeckWords } from '../Redux/actions'
 import StudyCard from '../Components/StudyCard'
+import { withRouter } from 'react-router-dom'
 
 class CardContainer extends React.Component{
 
@@ -26,6 +27,9 @@ class CardContainer extends React.Component{
   render(){
     return (
       <div>
+        <span className="mode-button"><a href="">Study</a></span>
+        <span className="mode-button"><a href="">Drill</a></span>
+        <span className="mode-button"><a href="">Quiz</a></span>
         <StudyCard />
       </div>
     )
@@ -40,4 +44,4 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ( {
   setDeckWords: (wordsArray) => { dispatch( setDeckWords( wordsArray ) ) }
 } )
-export default connect(mapStateToProps, mapDispatchToProps) (CardContainer)
+export default connect(mapStateToProps, mapDispatchToProps) (withRouter(CardContainer))

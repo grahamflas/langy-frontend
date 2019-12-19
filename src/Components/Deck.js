@@ -8,7 +8,7 @@ class Deck  extends React.Component {
     let { deckObj, deckObj: { slug }, history: { location: {pathname}  } } = this.props
 
     this.props.setDeck( deckObj )
-    this.props.history.push(`${pathname}/${slug}`)
+    this.props.history.push(`${pathname}/${slug}/study`)
   }
   
   render() {
