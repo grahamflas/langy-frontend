@@ -3,7 +3,7 @@ import { BASE_URL } from '../App'
 import { connect } from 'react-redux'
 import { setDeckWords } from '../Redux/actions'
 import StudyCard from '../Components/StudyCard'
-import { withRouter } from 'react-router-dom'
+import { Route, withRouter, NavLink } from 'react-router-dom'
 
 class CardContainer extends React.Component{
 
@@ -24,13 +24,29 @@ class CardContainer extends React.Component{
       .then( resp => resp.json() )
       .then( wordsArray => this.props.setDeckWords( wordsArray ) )
   }
+
   render(){
+    let { language, category } = this.props.match.params
     return (
       <div>
-        <span className="mode-button"><a href="">Study</a></span>
-        <span className="mode-button"><a href="">Drill</a></span>
-        <span className="mode-button"><a href="">Quiz</a></span>
-        <StudyCard />
+        <div>
+          <div> 
+           <NavLink to={`/decks/${language}/${category}/study`}>Study</NavLink>
+          </div>
+  
+          <div>
+            <NavLink to={`/decks/${language}/${category}/drill`}>Drill</NavLink>
+          </div>
+  
+          <div>
+            <NavLink to={`/decks/${language}/${category}/quiz`}>Quiz</NavLink>
+          </div>
+        </div>
+
+        <Route exact path="/decks/:language/:category/study" component={StudyCard}/>
+        <Route exact path="/decks/:language/:category/drill" component={StudyCard}/>
+        <Route exact path="/decks/:language/:category/quiz" component={StudyCard}/>
+
       </div>
     )
   }
