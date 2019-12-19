@@ -42,18 +42,10 @@ class StudyCard extends React.Component {
       <div>
         { deckWords.length > 0 ? (
           <div>
-            <div className="ui card study flip-card">
-              <div className="flip-card-inner">
-                <div className="flip-card-front">
-                  <h1>{deckWords[this.state.currentCard].word_target_language}</h1>
-                  { deckWords[this.state.currentCard].pronunciation ? (<p><em>{deckWords[this.state.currentCard].pronunciation}</em></p>) : null }
-                </div>
-                
-                <div className="flip-card-back">
-                  <p>{deckWords[this.state.currentCard].word_english}</p>
-                </div>
-              </div>
-            </div>
+            <h1>{deckWords[this.state.currentCard].word_target_language}</h1>
+            { deckWords[this.state.currentCard].pronunciation ? (<p>(<em>{deckWords[this.state.currentCard].pronunciation}</em>)</p>) : null }
+          
+            <p>{deckWords[this.state.currentCard].word_english}</p>
   
             <div>
               <button onClick={this.cardBackwards}> - </button>
