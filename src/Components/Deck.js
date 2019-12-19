@@ -5,9 +5,7 @@ import { setDeck } from '../Redux/actions'
 
 class Deck  extends React.Component {
   clickHandler = () => {
-    let { pathname } = this.props.history.location
-    let { slug } = this.props.deckObj
-    let { deckObj } = this.props
+    let { deckObj, deckObj: { slug }, history: { location: {pathname}  } } = this.props
 
     this.props.setDeck( deckObj )
     this.props.history.push(`${pathname}/${slug}`)
