@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { setDeckWords } from '../Redux/actions'
 import StudyCard from '../Components/StudyCard'
 import { Route, withRouter, NavLink } from 'react-router-dom'
+import DrillCard from '../Components/DrillCard'
 
 class CardContainer extends React.Component{
 
@@ -44,7 +45,7 @@ class CardContainer extends React.Component{
         </div>
 
         <Route exact path="/decks/:language/:category/study" component={StudyCard}/>
-        <Route exact path="/decks/:language/:category/drill" component={StudyCard}/>
+        <Route exact path="/decks/:language/:category/drill" component={DrillCard}/>
         <Route exact path="/decks/:language/:category/quiz" component={StudyCard}/>
 
       </div>
