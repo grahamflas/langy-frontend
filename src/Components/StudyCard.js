@@ -43,7 +43,7 @@ class StudyCard extends React.Component {
         { deckWords.length > 0 ? (
           <div>
             <h1>{deckWords[this.state.currentCard].word_target_language}</h1>
-            { deckWords[this.state.currentCard].pronunciation ? (<p>(<em>{deckWords[this.state.currentCard].pronunciation}</em>)</p>) : null }
+            { deckWords[this.state.currentCard].pronunciation ? (<p>( <em>{deckWords[this.state.currentCard].pronunciation}</em> )</p>) : null }
           
             <p>{deckWords[this.state.currentCard].word_english}</p>
   
