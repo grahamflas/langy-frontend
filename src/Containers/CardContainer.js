@@ -2,9 +2,10 @@ import React from 'react'
 import { BASE_URL } from '../App'
 import { connect } from 'react-redux'
 import { setDeckWords } from '../Redux/actions'
-import StudyCard from '../Components/StudyCard'
 import { Route, withRouter, NavLink } from 'react-router-dom'
+import StudyCard from '../Components/StudyCard'
 import DrillCard from '../Components/DrillCard'
+import QuizCard from '../Components/QuizCard'
 
 class CardContainer extends React.Component{
 
@@ -46,7 +47,7 @@ class CardContainer extends React.Component{
 
         <Route exact path="/decks/:language/:category/study" component={StudyCard}/>
         <Route exact path="/decks/:language/:category/drill" component={DrillCard}/>
-        <Route exact path="/decks/:language/:category/quiz" component={StudyCard}/>
+        <Route exact path="/decks/:language/:category/quiz" component={QuizCard}/> 
 
       </div>
     )
@@ -61,4 +62,5 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ( {
   setDeckWords: (wordsArray) => { dispatch( setDeckWords( wordsArray ) ) }
 } )
+
 export default connect(mapStateToProps, mapDispatchToProps) (withRouter(CardContainer))
