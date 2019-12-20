@@ -42,9 +42,9 @@ class StudyCard extends React.Component {
       <div>
         { deckWords.length > 0 ? (
           <div>
-            <div className="flip-card-container">
-                <div className="flip-card">
-                  <div className="flip-card-front">
+            <div className="card-container">
+                <div className="card">
+                  <div className="card-front">
                     <h1>{deckWords[this.state.currentCard].word_target_language}</h1>
                     <br/>
                     { 
@@ -56,7 +56,7 @@ class StudyCard extends React.Component {
                     }
                   </div>
 
-                  <div className="flip-card-back">
+                  <div className="card-back">
                     <p> { deckWords[this.state.currentCard].word_english } </p>
                   </div>
                 </div>
