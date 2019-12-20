@@ -45,16 +45,15 @@
 
 /* _______________ STUDY CARD CSS _______________ */
 
-.card-container {
+.flip-card-container {
   margin-left: auto;
   margin-right: auto;
   width: 500px;
   height: 309px;
   perspective: 1000px;
-  border: 1px solid red;
 }
 
-.card {
+.flip-card {
   position: relative;
   width: 100%;
   height: 100%;
@@ -62,12 +61,12 @@
   transform-style: preserve-3d;
 }
 
-.card-container:hover .card {
+.flip-card-container:hover .flip-card {
   transform: rotateX(180deg);
 }
 
 /* Position the front and back side */
-.card-front, .card-back {
+.flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -79,12 +78,12 @@
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.3);
 }
 
-.card-front{
+.flip-card-front{
   background-color: #333;
   color: #fff;
 }
 
-.card-back{
+.flip-card-back{
   background-color: #fff; 
   color: #333;
   transform: rotateX(180deg);
