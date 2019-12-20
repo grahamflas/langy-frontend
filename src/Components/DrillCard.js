@@ -5,7 +5,11 @@ class DrillCard extends React.Component{
   render(){
     return(
       <div className="drill-card-container">
-        Drill Card Goes Here
+        <div className="drill-card">
+          <div className="drill-card-front">
+            Drill Card Goes Here
+          </div>
+        </div>
       </div>
     )
   }

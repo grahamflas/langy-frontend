@@ -105,7 +105,6 @@
   width: 500px;
   height: 309px;
   perspective: 1000px;
-  border: 1px solid red;
 }
 
 .drill-card {
@@ -116,9 +115,9 @@
   transform-style: preserve-3d;
 }
 
-.drill-card-container:hover .flip-card {
+/* .drill-card-container:hover .flip-card {
   transform: rotateX(180deg);
-}
+} */
 
 /* Position the front and back side */
 .drill-card-front, .flip-card-back {
@@ -146,12 +145,12 @@
   border: 0.1px solid rgba(0,0,0,0.3);
 }
 
-.drill-card, .button-container{
-  margin: 50px
-}
-
 /* _______________ Drill CARD CSS ***FIN*** _______________ */
 
 .mode-button{
   margin: 20px;
+}
+
+.navbar-link {
+  
 }
