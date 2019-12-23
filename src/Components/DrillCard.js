@@ -18,12 +18,15 @@ class DrillCard extends React.Component{
     } )
   }
 
-  nextCard(){
-    debugger
-    let nextCard = this.state.currentCard >= this.props.deckWords.length-1 ? ( 0 ) : ( this.state.currentCard + 1 )
+  nextCard( state ){
+    let nextCard = state.currentCard >= this.props.deckWords.length-1 ? ( 0 ) : ( state.currentCard + 1 )
 
     console.log("Current card:", this.state.currentCard, "Next card: ", nextCard)
 
+    this.setState( {
+      currentCard: nextCard,
+      answer: this.props.deckWords[nextCard].word_english
+    } )
   }
 
 
@@ -40,7 +43,7 @@ class DrillCard extends React.Component{
           </div>
         </div>
   
-        <button onClick={this.nextCard} >Next Card</button>
+        <button onClick={ () => this.nextCard(this.state)} >Next Card</button>
     </div>
     )
   }
