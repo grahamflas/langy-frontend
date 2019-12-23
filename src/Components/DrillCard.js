@@ -6,7 +6,7 @@ class DrillCard extends React.Component{
     super()
     this.state={
       currentCard: 0, 
-      answer: ""
+      correctAnswer: ""
     }
   }
 
@@ -14,18 +14,18 @@ class DrillCard extends React.Component{
     const { currentCard } = this.state
 
     this.setState( {
-      answer: this.props.deckWords[currentCard].word_english
+      correctAnswer: this.props.deckWords[currentCard].word_english
     } )
   }
 
   nextCard( state ){
-    let nextCard = state.currentCard >= this.props.deckWords.length-1 ? ( 0 ) : ( state.currentCard + 1 )
+    let nextCard = ( state.currentCard >= this.props.deckWords.length-1 ) ? ( 0 ) : ( state.currentCard + 1 )
 
     console.log("Current card:", this.state.currentCard, "Next card: ", nextCard)
 
     this.setState( {
       currentCard: nextCard,
-      answer: this.props.deckWords[nextCard].word_english
+      correctAnswer: this.props.deckWords[nextCard].word_english
     } )
   }
 
@@ -39,11 +39,24 @@ class DrillCard extends React.Component{
           <div className="drill-card">
             <div className="drill-card-front">
               <h1>{deckWords[this.state.currentCard].word_target_language}</h1>
+              <br/>
+              { 
+                deckWords[this.state.currentCard].pronunciation ? (
+                  <p className="pronunciation">
+                    ( <em>{deckWords[this.state.currentCard].pronunciation}</em> )
+                  </p>
+                ) : null 
+              }
             </div>
           </div>
         </div>
   
-        <button onClick={ () => this.nextCard(this.state)} >Next Card</button>
+        <button 
+          className="button-container"
+          onClick={ () => this.nextCard(this.state)} 
+        >
+          Next Card
+        </button>
     </div>
     )
   }
