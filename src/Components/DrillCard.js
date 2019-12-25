@@ -50,7 +50,18 @@ class DrillCard extends React.Component{
       body: JSON.stringify( data )
     } )
       .then( resp => resp.json() )
-      .then( wordBank => this.setState( { wordBank: wordBank } ) )
+      .then( wordsArray => this.randomizeOrder( wordsArray ) )
+  }
+
+  randomizeOrder( wordsArray ) {
+    let randomized = []
+
+    while ( wordsArray.length > 0 ) {
+      let i = Math.floor( Math.random() * (wordsArray.length) )
+      randomized.push( wordsArray.splice(i, 1)[0] )
+    }
+
+    this.setState( { wordBank: randomized } )
   }
 
 
