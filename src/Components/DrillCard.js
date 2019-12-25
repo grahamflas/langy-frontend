@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { BASE_URL } from '../App'
+import DrillChoice from './DrillChoice'
 
 class DrillCard extends React.Component{
   constructor(){
@@ -82,9 +83,7 @@ class DrillCard extends React.Component{
 
         <div>
           {
-            this.state.wordBank.map( word => {
-              return word == this.state.correctAnswer ? <div className="ui card" style={{color: "red"}}>{word}</div> : <div className="ui card">{word}</div>
-            } )
+            this.state.wordBank.map( word => <DrillChoice /> )
           }
         </div>
   
