@@ -30,15 +30,10 @@ class DrillCard extends React.Component{
   }
 
   getWrongWords(){
-    console.log( "inside getWrongWords. State:", this.state )
-
-    let { languageID, deckID } = this.props
-    let { correctAnswer } = this.state
-
     let data = {
-      languageID: languageID,
-      deckID: deckID,
-      correctAnswer: correctAnswer
+      languageID: this.props.languageID,
+      deckID: this.props.deckID,
+      correctAnswer: this.state.correctAnswer
     }
 
     fetch( `${BASE_URL}/get_wrong_words`, {
@@ -87,13 +82,15 @@ class DrillCard extends React.Component{
 
         <div>
           {
-            this.state.wordBank.map( word => <p>{word}</p> )
+            this.state.wordBank.map( word => {
+              return word == this.state.correctAnswer ? <p style={{color: "red"}}>{word}</p> : <p>{word}</p>
+            } )
           }
         </div>
   
         <button 
           className="button-container"
-          onClick={ () => this.nextCard(this.state)} 
+          onClick={() => this.nextCard(this.state)} 
         >
           Next Card
         </button>
@@ -109,4 +106,4 @@ const mapStateToProps = state => ({
   deckID: state.selectedDeck.id
 })
 
-export default  connect(mapStateToProps ) (DrillCard)
+export default  connect(mapStateToProps)(DrillCard)
