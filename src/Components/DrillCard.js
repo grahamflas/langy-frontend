@@ -1,12 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { BASE_URL } from '../App'
 
 class DrillCard extends React.Component{
   constructor(){
     super()
     this.state={
       currentCard: 0, 
-      correctAnswer: ""
+      correctAnswer: "",
+      wordBank: []
     }
   }
 
@@ -29,6 +31,26 @@ class DrillCard extends React.Component{
 
   getWrongWords(){
     console.log( "inside getWrongWords. State:", this.state )
+
+    let { languageID, deckID } = this.props
+    let { correctAnswer } = this.state
+
+    let data = {
+      languageID: languageID,
+      deckID: deckID,
+      correctAnswer: correctAnswer
+    }
+
+    fetch( `${BASE_URL}/get_wrong_words`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }, 
+      body: JSON.stringify( data )
+    } )
+      .then( resp => resp.json() )
+      .then( wordBank => this.setState( { wordBank: wordBank } ) )
   }
 
 
@@ -51,6 +73,12 @@ class DrillCard extends React.Component{
             </div>
           </div>
         </div>
+
+        <div>
+          {
+            this.state.wordBank.map( word => <p>{word}</p> )
+          }
+        </div>
   
         <button 
           className="button-container"
@@ -65,7 +93,9 @@ class DrillCard extends React.Component{
 }
 
 const mapStateToProps = state => ({
-  deckWords: state.deckWords
+  deckWords: state.deckWords,
+  languageID: state.selectedLanguage.id,
+  deckID: state.selectedDeck.id
 })
 
 export default  connect(mapStateToProps ) (DrillCard)
