@@ -7,7 +7,8 @@ class QuizCard extends React.Component{
     this.state={
       currentCard: 0,
       correctAnswer: "", 
-      userInput: ""
+      userInput: "",
+      correctCount: 0
     }
   }
 
@@ -23,6 +24,17 @@ class QuizCard extends React.Component{
   changeHandler = ( event ) => {
     this.setState( { userInput: event.target.value } )
   }
+
+  submitHandler = () => {
+    this.checkAnswer()
+  }
+
+  checkAnswer = () => {
+    const { correctAnswer, userInput } = this.state
+    console.log("correct answer: ", correctAnswer, "input: ", userInput)
+  }
+
+
 
   render(){
     const { deckWords } = this.props
@@ -49,6 +61,11 @@ class QuizCard extends React.Component{
           <input
             type="text"
             onChange={this.changeHandler}
+          />
+
+          <input 
+            type="submit"
+            onClick={this.submitHandler}
           />
         </div>
 
