@@ -83,7 +83,14 @@ class DrillCard extends React.Component{
 
         <div>
           {
-            this.state.wordBank.map( word => <DrillChoice /> )
+            this.state.wordBank.map( word => (
+              <DrillChoice
+                key={word} 
+                word={word}
+                correctAnswer={this.state.correctAnswer}
+                closeModal={ () => this.nextCard(this.state) }
+              />
+            ) )
           }
         </div>
   
