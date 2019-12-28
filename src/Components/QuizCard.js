@@ -11,6 +11,15 @@ class QuizCard extends React.Component{
     }
   }
 
+  componentDidMount(){
+    const { currentCard } = this.state
+    const { deckWords } = this.props
+
+    this.setState( {
+      correctAnswer: deckWords[currentCard].word_english
+    } )
+  }
+
   changeHandler = ( event ) => {
     this.setState( { userInput: event.target.value } )
   }
