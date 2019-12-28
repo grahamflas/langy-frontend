@@ -26,12 +26,17 @@ class QuizCard extends React.Component{
   }
 
   submitHandler = () => {
-    this.checkAnswer()
+    this.checkAnswer() ? this.setState( { correctCount: this.state.correctCount + 1 } ) : null
+
+    this.nextCard()
   }
 
   checkAnswer = () => {
-    const { correctAnswer, userInput } = this.state
-    console.log("correct answer: ", correctAnswer, "input: ", userInput)
+    let { correctAnswer, userInput } = this.state
+    correctAnswer = correctAnswer.toLowerCase()
+    userInput = userInput.toLowerCase()
+
+    return correctAnswer === userInput ? true : false
   }
 
 
