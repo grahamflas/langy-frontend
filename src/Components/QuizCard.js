@@ -11,8 +11,8 @@ class QuizCard extends React.Component{
     }
   }
 
-  changeHandler = () => {
-    console.log("handling change")
+  changeHandler = ( event ) => {
+    this.setState( { userInput: event.target.value } )
   }
 
   render(){
@@ -39,7 +39,7 @@ class QuizCard extends React.Component{
         <div>
           <input
             type="text"
-            onChange={ () => this.changeHandler() }
+            onChange={this.changeHandler}
           />
         </div>
 
