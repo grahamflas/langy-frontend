@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
 
 class QuizCard extends React.Component{
-  constructor(){
+  constructor(props){
     super()
     this.state={
       currentCard: 0,
+      deckLength: props.deckWords.length,
       correctAnswer: "", 
       userInput: "",
       correctCount: 0, 
@@ -67,12 +68,24 @@ class QuizCard extends React.Component{
 
   end(){
     this.setState( {quizComplete: true} )
-    Swal.fire({
-      icon: "success",
-      title: "You finished!",
-      showConfirmButton: false, 
-      showCloseButton: true
-    })
+
+    let { correctCount, deckLength } = this.state
+
+    correctCount === deckLength ? (
+      Swal.fire({
+        icon: "success",
+        title: `You answered ${correctCount} out of ${deckLength} words correctly!`,
+        showConfirmButton: false, 
+        showCloseButton: true
+      })
+    ) : (
+      Swal.fire({
+        title: `Give it another go. You answered ${correctCount} out of ${deckLength} words correctly.`,
+        showConfirmButton: false, 
+        showCloseButton: true
+      })
+    )
+    
   }
 
   render(){
