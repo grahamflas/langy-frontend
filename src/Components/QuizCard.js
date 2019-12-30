@@ -47,7 +47,7 @@ class QuizCard extends React.Component{
   }
 
   sanitize = ( text ) => {
-    return text.replace(/\.{3}|\?|\u2026|\!/gi, "").toLowerCase()
+    return text.replace(/\.{3}|\?|\u2026|!/gi, "").toLowerCase()
   }
   
   nextCard( state ){
@@ -76,7 +76,10 @@ class QuizCard extends React.Component{
         icon: "success",
         title: `You answered ${correctCount} out of ${deckLength} words correctly!`,
         showConfirmButton: false, 
-        showCloseButton: true
+        showCloseButton: true,
+        onClose: () => {
+          this.deckMastered()
+        }
       })
     ) : (
       Swal.fire({
@@ -93,6 +96,10 @@ class QuizCard extends React.Component{
         }
       })
     )
+  }
+
+  deckMastered(){
+    this.props.history.push("/decks/german")
   }
 
   render(){
@@ -130,7 +137,8 @@ class QuizCard extends React.Component{
 }
 
 const mapStateToProps = state => ( {
-  deckWords: state.deckWords
+  deckWords: state.deckWords, 
+  currentUserID: state
 } )
 
 export default connect(mapStateToProps)(QuizCard)
