@@ -47,7 +47,9 @@ class QuizCard extends React.Component{
   }
 
   sanitize = ( text ) => {
-    return text.replace(/\.{3}|\?|\u2026|!/gi, "").toLowerCase()
+    // \u2026 = … (ellipsis)
+    // \u2019 : ’ (right single quote)
+    return text.replace(/\.{3}|\?|\u2026|\u2019|!|'|/gi, "").toLowerCase()
   }
   
   nextCard( state ){

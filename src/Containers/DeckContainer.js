@@ -31,6 +31,7 @@ class DeckContainer extends React.Component {
   render(){
     return(
       <div>
+        <h1>{this.props.selectedLanguage.name}</h1>
         { this.state.decks.map( deckObj => < Deck key={deckObj.category} deckObj={deckObj}/> ) }
       </div>
     )
