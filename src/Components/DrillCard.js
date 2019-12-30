@@ -22,6 +22,7 @@ class DrillCard extends React.Component{
   }
 
   nextCard( state ){
+    console.log("inside nextCard()")
     let nextCard = ( state.currentCard >= this.props.deckWords.length-1 ) ? ( 0 ) : ( state.currentCard + 1 )
 
     this.setState( {
@@ -93,13 +94,6 @@ class DrillCard extends React.Component{
             ) )
           }
         </div>
-  
-        <button 
-          className="button-container"
-          onClick={() => this.nextCard(this.state)} 
-        >
-          Next Card
-        </button>
     </div>
     )
   }

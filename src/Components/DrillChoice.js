@@ -14,7 +14,8 @@ class DrillChoice extends React.Component {
         showConfirmButton: false, 
         timer: 4000, 
         timerProgressBar: true, 
-        showCloseButton: true
+        showCloseButton: true,
+        onClose: () => { this.props.closeModal() }
       })
     ) : (
       Swal.fire({
