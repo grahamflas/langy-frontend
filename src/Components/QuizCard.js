@@ -32,6 +32,8 @@ class QuizCard extends React.Component{
 
   submitHandler(event){
     event.preventDefault()
+
+    this.setState( {userInput: ""} )
     
     let { correctAnswer, userInput } = this.state
     let cleanCorrectAnswer = this.sanitize( correctAnswer )
@@ -40,11 +42,10 @@ class QuizCard extends React.Component{
     console.log("correct: ",cleanCorrectAnswer, "input: ",cleanUserInput)
 
     if (cleanCorrectAnswer === cleanUserInput) {
-      this.setState( { correctCount: this.state.correctCount + 1 } )
-    } 
-
-    this.setState( {userInput: ""} )
-    this.nextCard(this.state);
+      this.setState( { correctCount: this.state.correctCount + 1 }, () => this.nextCard(this.state) )
+    } else {
+      this.nextCard(this.state)
+    }
   }
 
   sanitize = ( text ) => {
@@ -82,10 +83,15 @@ class QuizCard extends React.Component{
       Swal.fire({
         title: `Give it another go. You answered ${correctCount} out of ${deckLength} words correctly.`,
         showConfirmButton: false, 
-        showCloseButton: true
+        showCloseButton: true,
+        onClose: () => {
+          this.setState( {
+            currentCard: 0,
+            quizComplete: false
+          } )
+        }
       })
     )
-    
   }
 
   render(){
