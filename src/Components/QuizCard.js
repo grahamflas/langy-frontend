@@ -37,9 +37,10 @@ class QuizCard extends React.Component{
       this.setState( { correctCount: this.state.correctCount + 1 } )
     } 
 
+    this.setState( {userInput: ""} )
     this.nextCard(this.state);
   }
-
+  
   checkAnswer = () => {
     let { correctAnswer, userInput } = this.state
     correctAnswer = correctAnswer.toLowerCase()
@@ -82,7 +83,7 @@ class QuizCard extends React.Component{
         </div>
         
         <form onSubmit={(event) => this.submitHandler(event)}>
-          <input type="text" onChange={this.changeHandler}/>
+          <input type="text" value={this.state.userInput} onChange={this.changeHandler}/>
           <input type="submit" value="Submit"/>
         </form>
         {/* <div>
