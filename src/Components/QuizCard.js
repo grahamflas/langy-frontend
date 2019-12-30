@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import Swal from 'sweetalert2'
 
 class QuizCard extends React.Component{
   constructor(){
@@ -51,17 +52,13 @@ class QuizCard extends React.Component{
     console.log( "inside nextCard: ", state )
     let { deckWords } = this.props
 
-    let nextCard = ( state.currentCard >= this.props.deckWords.length-1 ) ? ( 0 ) : ( state.currentCard + 1 )
+    let nextCard = ( state.currentCard < this.props.deckWords.length-1 ) ? ( state.currentCard + 1 ) : ( this.props.deckWords.length-1) 
 
     this.setState( {
       currentCard: nextCard,
       correctAnswer: deckWords[nextCard].word_english
     } )
   }
-
-
-
-
 
   render(){
     const { deckWords } = this.props
