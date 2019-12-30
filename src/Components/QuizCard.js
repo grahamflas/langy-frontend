@@ -9,7 +9,8 @@ class QuizCard extends React.Component{
       currentCard: 0,
       correctAnswer: "", 
       userInput: "",
-      correctCount: 0
+      correctCount: 0, 
+      quizComplete: false
     }
   }
 
@@ -55,12 +56,7 @@ class QuizCard extends React.Component{
     let nextCard = ( state.currentCard < this.props.deckWords.length-1 ) ? ( state.currentCard + 1 ) : "end" 
 
     if (nextCard === "end") {
-      Swal.fire({
-        icon: "success",
-        title: "You finished!",
-        showConfirmButton: false, 
-        showCloseButton: true
-      })
+      this.end()
     } else {
       this.setState( {
         currentCard: nextCard,
@@ -70,7 +66,13 @@ class QuizCard extends React.Component{
   }
 
   end(){
-    console.log("deck ended")
+    this.setState( {quizComplete: true} )
+    Swal.fire({
+      icon: "success",
+      title: "You finished!",
+      showConfirmButton: false, 
+      showCloseButton: true
+    })
   }
 
   render(){
@@ -94,10 +96,13 @@ class QuizCard extends React.Component{
           </div>
         </div>
         
-        <form onSubmit={(event) => this.submitHandler(event)}>
-          <input type="text" value={this.state.userInput} onChange={this.changeHandler}/>
-          <input type="submit" value="Submit"/>
-        </form>
+        { this.state.quizComplete ? null : (
+          <form onSubmit={(event) => this.submitHandler(event)} >
+            <input type="text" value={this.state.userInput} onChange={this.changeHandler} />
+            <input type="submit" value="Submit"/>
+          </form>
+        ) }
+        
 
       </div>
     )
