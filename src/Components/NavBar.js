@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <div className="ui inverted teal menu">
+    <div className="navbar ui inverted teal menu">
       <NavLink className="ui button" to="/languages">Languages</NavLink>
     </div>
   )

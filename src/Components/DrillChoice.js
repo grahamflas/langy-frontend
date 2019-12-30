@@ -12,7 +12,7 @@ class DrillChoice extends React.Component {
         title: "Correct!",
         text: `${correctAnswer}`,
         showConfirmButton: false, 
-        timer: 4000, 
+        timer: 3000, 
         timerProgressBar: true, 
         showCloseButton: true,
         onClose: () => { this.props.closeModal() }
@@ -23,7 +23,7 @@ class DrillChoice extends React.Component {
         title: 'Oops...',
         text: "try again",
         showConfirmButton: false, 
-        timer: 4000,
+        timer: 3000,
         timerProgressBar: true, 
         showCloseButton: true
       })

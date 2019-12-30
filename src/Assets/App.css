@@ -13,6 +13,7 @@
   }
 }
 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -43,6 +44,13 @@
   left: 35% !important;
 } */
 
+body {
+  background-color: rgb(244, 245, 249)!important;
+}
+
+.navbar {
+  background-color: rgb(70, 120, 246) !important;
+}
 /* _______________ STUDY CARD CSS _______________ */
 
 .flip-card-container {
