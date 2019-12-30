@@ -25,10 +25,18 @@ class QuizCard extends React.Component{
     this.setState( { userInput: event.target.value } )
   }
 
-  submitHandler = () => {
-    this.checkAnswer() ? this.setState( { correctCount: this.state.correctCount + 1 } ) : null
+  submitHandler(event){
+    event.preventDefault()
+    
+    let { correctAnswer, userInput } = this.state
+    correctAnswer = correctAnswer.toLowerCase()
+    userInput = userInput.toLowerCase()
 
-    this.nextCard()
+    if (correctAnswer === userInput) {
+      this.setState( { correctCount: this.state.correctCount + 1 } )
+    } 
+
+    this.nextCard(this.state);
   }
 
   checkAnswer = () => {
@@ -38,6 +46,20 @@ class QuizCard extends React.Component{
 
     return correctAnswer === userInput ? true : false
   }
+
+  nextCard( state ){
+    console.log( "inside nextCard: ", state )
+    let { deckWords } = this.props
+
+    let nextCard = ( state.currentCard >= this.props.deckWords.length-1 ) ? ( 0 ) : ( state.currentCard + 1 )
+
+    this.setState( {
+      currentCard: nextCard,
+      correctAnswer: deckWords[nextCard].word_english
+    } )
+  }
+
+
 
 
 
@@ -61,8 +83,12 @@ class QuizCard extends React.Component{
             </div>
           </div>
         </div>
-
-        <div>
+        
+        <form onSubmit={(event) => this.submitHandler(event)}>
+          <input type="text" onChange={this.changeHandler}/>
+          <input type="submit" value="Submit"/>
+        </form>
+        {/* <div>
           <input
             type="text"
             onChange={this.changeHandler}
@@ -72,7 +98,7 @@ class QuizCard extends React.Component{
             type="submit"
             onClick={this.submitHandler}
           />
-        </div>
+        </div> */}
 
       </div>
     )
