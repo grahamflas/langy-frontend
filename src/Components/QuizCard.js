@@ -20,6 +20,8 @@ class QuizCard extends React.Component{
     this.setState( {
       correctAnswer: deckWords[currentCard].word_english
     } )
+
+    console.log("Mounted")
   }
 
   changeHandler = ( event ) => {
@@ -50,12 +52,25 @@ class QuizCard extends React.Component{
   nextCard( state ){
     let { deckWords } = this.props
 
-    let nextCard = ( state.currentCard < this.props.deckWords.length-1 ) ? ( state.currentCard + 1 ) : ( this.props.deckWords.length-1) 
+    let nextCard = ( state.currentCard < this.props.deckWords.length-1 ) ? ( state.currentCard + 1 ) : "end" 
 
-    this.setState( {
-      currentCard: nextCard,
-      correctAnswer: deckWords[nextCard].word_english
-    } )
+    if (nextCard === "end") {
+      Swal.fire({
+        icon: "success",
+        title: "You finished!",
+        showConfirmButton: false, 
+        showCloseButton: true
+      })
+    } else {
+      this.setState( {
+        currentCard: nextCard,
+        correctAnswer: deckWords[nextCard].word_english
+      } )
+    }
+  }
+
+  end(){
+    console.log("deck ended")
   }
 
   render(){
