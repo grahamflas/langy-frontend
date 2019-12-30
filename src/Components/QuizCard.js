@@ -30,27 +30,24 @@ class QuizCard extends React.Component{
     event.preventDefault()
     
     let { correctAnswer, userInput } = this.state
-    correctAnswer = correctAnswer.toLowerCase()
-    userInput = userInput.toLowerCase()
+    let cleanCorrectAnswer = this.sanitize( correctAnswer )
+    let cleanUserInput = this.sanitize( userInput )
+    
+    console.log("correct: ",cleanCorrectAnswer, "input: ",cleanUserInput)
 
-    if (correctAnswer === userInput) {
+    if (cleanCorrectAnswer === cleanUserInput) {
       this.setState( { correctCount: this.state.correctCount + 1 } )
     } 
 
     this.setState( {userInput: ""} )
     this.nextCard(this.state);
   }
-  
-  checkAnswer = () => {
-    let { correctAnswer, userInput } = this.state
-    correctAnswer = correctAnswer.toLowerCase()
-    userInput = userInput.toLowerCase()
 
-    return correctAnswer === userInput ? true : false
+  sanitize = ( text ) => {
+    return text.replace(/\.{3}|\?|\u2026|\!/gi, "").toLowerCase()
   }
-
+  
   nextCard( state ){
-    console.log( "inside nextCard: ", state )
     let { deckWords } = this.props
 
     let nextCard = ( state.currentCard < this.props.deckWords.length-1 ) ? ( state.currentCard + 1 ) : ( this.props.deckWords.length-1) 
@@ -86,17 +83,6 @@ class QuizCard extends React.Component{
           <input type="text" value={this.state.userInput} onChange={this.changeHandler}/>
           <input type="submit" value="Submit"/>
         </form>
-        {/* <div>
-          <input
-            type="text"
-            onChange={this.changeHandler}
-          />
-
-          <input 
-            type="submit"
-            onClick={this.submitHandler}
-          />
-        </div> */}
 
       </div>
     )
