@@ -30,24 +30,26 @@ class CardContainer extends React.Component{
   render(){
     let { language, category } = this.props.match.params
     return (
-      <div>
-        <div>
-          <div> 
+      <div className="card-container">
+        <div className="mode-container">
+          <div className="mode-button"> 
            <NavLink to={`/decks/${language}/${category}/study`}>Study</NavLink>
           </div>
   
-          <div>
+          <div className="mode-button">
             <NavLink to={`/decks/${language}/${category}/drill`}>Drill</NavLink>
           </div>
   
-          <div>
+          <div className="mode-button">
             <NavLink to={`/decks/${language}/${category}/quiz`}>Quiz</NavLink>
           </div>
         </div>
 
-        <Route exact path="/decks/:language/:category/study" component={StudyCard}/>
-        <Route exact path="/decks/:language/:category/drill" component={DrillCard}/>
-        <Route exact path="/decks/:language/:category/quiz" component={QuizCard}/> 
+        <div>
+          <Route exact path="/decks/:language/:category/study" component={StudyCard}/>
+          <Route exact path="/decks/:language/:category/drill" component={DrillCard}/>
+          <Route exact path="/decks/:language/:category/quiz" component={QuizCard}/> 
+        </div>
 
       </div>
     )

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -36,7 +37,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 /* .study {
   width: 30% !important;
@@ -44,8 +45,9 @@
   left: 35% !important;
 } */
 
-body {
+html, body {
   background-color: rgb(244, 245, 249)!important;
+  height: 100%;
 }
 
 .navbar {
@@ -54,7 +56,7 @@ body {
 
 .language-card {
   width: 20%;
-  margin: 50px;
+  margin: 40px;
   display: flex;
   flex-direction: column;
   height: 270px;
@@ -77,13 +79,63 @@ body {
 .language-link{
   color: black;
 }
+
+.deck-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  border: 1px solid red;
+}
+
+.deck-card {
+  width: 20%;
+  margin: 15px;
+  height: 200px;
+  background-color: #FCFBFF;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  /* border: 1px solid #8065FF; */
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(19,6,43,0.66); 
+  box-shadow: 0px 0px 5px 0px rgba(19,6,43,0.66);
+  padding-left: 35px;
+  padding-right: 35px;
+
+}
+
+.deck-name {
+  /* border: 1px solid red; */
+  font-size: 20px;
+  margin: auto;
+  
+}
+
+.card-container{
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.mode-container {
+ width: 30%;
+ /* display: flex;
+ flex-flow: space-around; */
+}
+
+.mode-button {
+  border: 1px solid turquoise;
+  width: 50%;
+  margin: auto;
+}
+
 /* _______________ STUDY CARD CSS _______________ */
 
 .flip-card-container {
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
-  height: 309px;
+  width: 700px;
+  height: 433px;
   perspective: 1000px;
 }
 
@@ -136,8 +188,8 @@ body {
 .drill-card-container {
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
-  height: 309px;
+  width: 700px;
+  height: 433px;
   perspective: 1000px;
 }
 
@@ -181,9 +233,6 @@ body {
 
 /* _______________ Drill CARD CSS ***FIN*** _______________ */
 
-.mode-button{
-  margin: 20px;
-}
 
 .navbar-link {
   
