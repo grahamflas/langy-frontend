@@ -22,9 +22,12 @@ class Languages extends React.Component{
     return(
       <div>
         <h1>Select a language:</h1>
-        { 
-          this.state.languages.map( lang => < Language key={lang.name} lang={lang}/> )
-        }
+
+        <div className="ui centered grid">
+          { 
+            this.state.languages.map( lang => < Language key={lang.name} lang={lang}/> )
+          }
+        </div>
       </div>
     )
   }

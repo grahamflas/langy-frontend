@@ -14,7 +14,7 @@ class Deck  extends React.Component {
   render() {
     let { category } = this.props.deckObj
     return (
-      <div className="ui card" onClick={() => this.clickHandler()}>
+      <div className="ui card" onClick={this.clickHandler}>
           {category}
       </div>
     )

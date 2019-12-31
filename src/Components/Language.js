@@ -30,10 +30,12 @@ class Language extends React.Component{
 
   render(){
     return(
-      <div className="ui card" onClick={this.clickHandler} >
-        <Link to={`/decks/${this.props.lang.slug}`}>
-          {this.props.lang.name}
-        </Link>
+      <div className="language-card" onClick={this.clickHandler} >
+       <div className="language-name">
+          <Link className="language-link" to={`/decks/${this.props.lang.slug}`}>
+            {this.props.lang.name}
+          </Link>
+       </div>
       </div>
     )
   }
