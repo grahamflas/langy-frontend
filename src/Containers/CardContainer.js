@@ -32,6 +32,9 @@ class CardContainer extends React.Component{
     return (
       <div className="card-container">
         <div className="mode-container">
+          <div className="back-to-decks-btn">
+            <NavLink to={`/decks/${language}`}>Back to decks</NavLink>
+          </div>
           <div className="mode-button"> 
            <NavLink to={`/decks/${language}/${category}/study`}>Study</NavLink>
           </div>
