@@ -85,7 +85,6 @@ html, body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  border: 1px solid red;
 }
 
 .deck-card {
@@ -121,12 +120,19 @@ html, body {
  width: 30%;
  /* display: flex;
  flex-flow: space-around; */
+ border: 1px solid red;
+ 
 }
 
-.mode-button {
-  border: 1px solid turquoise;
-  width: 50%;
-  margin: auto;
+.mode-menu {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  margin-left: 30% !important;
+}
+
+.item {
+  font-size: 40px !important;
 }
 
 /* _______________ STUDY CARD CSS _______________ */

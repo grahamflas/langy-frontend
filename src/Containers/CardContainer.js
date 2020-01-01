@@ -27,25 +27,49 @@ class CardContainer extends React.Component{
       .then( wordsArray => this.props.setDeckWords( wordsArray ) )
   }
 
+  changeMode = (event) => {
+    event.persist()
+    let clickedModeID = event.currentTarget.id
+    let modeOptions = document.querySelectorAll('.item')
+
+    modeOptions.forEach( mode => {
+      if( mode.id === clickedModeID ) {
+        mode.classList.remove('active')
+        mode.classList.add('active')
+      } else {
+        mode.classList.remove('active')
+      }
+    } )
+
+  }
+
   render(){
     let { language, category } = this.props.match.params
     return (
+
       <div className="card-container">
         <div className="mode-container">
+
           <div className="back-to-decks-btn">
             <NavLink to={`/decks/${language}`}>Back to decks</NavLink>
           </div>
-          <div className="mode-button"> 
-           <NavLink to={`/decks/${language}/${category}/study`}>Study</NavLink>
+
+          <div className="ui secondary vertical pointing menu mode-menu">
+            
+            <div id="study-mode" className="item active" onClick={this.changeMode}> 
+              <NavLink to={`/decks/${language}/${category}/study`}>Study</NavLink>
+            </div>
+    
+            <div id="drill-mode" className="item" onClick={this.changeMode}>
+              <NavLink to={`/decks/${language}/${category}/drill`}>Drill</NavLink>
+            </div>
+    
+            <div id="quiz-mode" className="item" onClick={this.changeMode}>
+              <NavLink to={`/decks/${language}/${category}/quiz`}>Quiz</NavLink>
+            </div>
+
           </div>
-  
-          <div className="mode-button">
-            <NavLink to={`/decks/${language}/${category}/drill`}>Drill</NavLink>
-          </div>
-  
-          <div className="mode-button">
-            <NavLink to={`/decks/${language}/${category}/quiz`}>Quiz</NavLink>
-          </div>
+
         </div>
 
         <div>
