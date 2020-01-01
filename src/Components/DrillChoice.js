@@ -33,7 +33,7 @@ class DrillChoice extends React.Component {
   render() {
     let { word } = this.props
     return (
-      <div className="ui card drill-choice" onClick={this.handleClick}>
+      <div className="drill-choice" onClick={this.handleClick}>
         {word}
       </div>
     )
