@@ -52,8 +52,14 @@ html, body {
 }
 
 .navbar {
-  background-color: rgb(70, 120, 246) !important;
+  background-color: #4559AC !important;
   min-width: 100vh !important;
+}
+
+.title {
+  border: 1px solid red;
+  margin-left: 10px;
+  margin-right: 15px;
 }
 
 .language-card {
@@ -272,7 +278,7 @@ html, body {
   height: 50px;
   background-color: #FCFBFF;
   border-radius: 10px;
-  border: 1px solid rgb(70, 120, 246);
+  border: 1px solid #4559AC;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(19,6,43,0.66); 
   box-shadow: 0px 0px 5px 0px rgba(19,6,43,0.66);
   padding-left: 35px;
@@ -280,22 +286,24 @@ html, body {
 }
 
 .drill-choice:hover {
-  background: #F5C245;
+  background: #6ACCCE;
 }
 
-.quiz-input {
+.quiz-form {
   margin-top: 50px;
   outline: 1px rgb(70, 120, 246) !important;
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
 }
-.quiz-input:focus {
+.quiz-input {
+  width: 300px !important;
 }
 
 .quiz-button {
   width: 100px !important;
   text-align: center !important;
+  background: #F5C245 !important;
 }
 .quiz-button:hover {
-  background: #F5C245 !important;
+  background: rgb(216, 163, 29) !important;
 }
 
