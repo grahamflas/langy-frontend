@@ -126,9 +126,10 @@ class QuizCard extends React.Component{
         </div>
         
         { this.state.quizComplete ? null : (
-          <form onSubmit={(event) => this.submitHandler(event)} >
-            <input type="text" value={this.state.userInput} onChange={this.changeHandler} />
-            <input type="submit" value="Submit"/>
+          <form className="ui input huge quiz-input" onSubmit={(event) => this.submitHandler(event)} >
+            <input type="text" value={this.state.userInput} onChange={this.changeHandler} placeholder="Answer..."/>
+            <br/>
+            <input className="quiz-button" type="submit" value="Submit"/>
           </form>
         ) }
         

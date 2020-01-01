@@ -283,3 +283,19 @@ html, body {
   background: #F5C245;
 }
 
+.quiz-input {
+  margin-top: 50px;
+  outline: 1px rgb(70, 120, 246) !important;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+}
+.quiz-input:focus {
+}
+
+.quiz-button {
+  width: 100px !important;
+  text-align: center !important;
+}
+.quiz-button:hover {
+  background: #F5C245 !important;
+}
+
