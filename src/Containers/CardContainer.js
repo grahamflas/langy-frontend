@@ -62,15 +62,15 @@ class CardContainer extends React.Component{
 
           <div className="ui secondary vertical pointing menu mode-menu">
             
-            <div id="study-mode" className="item active" onClick={this.changeMode}> 
+            <div id="study-mode" className="mode-type item active" onClick={this.changeMode}> 
               Study
             </div>
     
-            <div id="drill-mode" className="item" onClick={this.changeMode}>
+            <div id="drill-mode" className="mode-type item" onClick={this.changeMode}>
               Drill
             </div>
     
-            <div id="quiz-mode" className="item" onClick={this.changeMode}>
+            <div id="quiz-mode" className="mode-type item" onClick={this.changeMode}>
               Quiz
             </div>
 

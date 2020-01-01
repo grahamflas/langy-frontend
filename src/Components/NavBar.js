@@ -6,10 +6,11 @@ const NavBar = (props) => {
   let { currentUser: {username} } = props
   return (
 
-    <div className="navbar ui inverted teal menu">
+    <div className="navbar ui secondary pointing menu">
       <img className="title" src="https://fontmeme.com/permalink/200101/70bec4dea25e2d54162772b3a5f0e3ac.png" alt="black-rose-font" border="0" />
-      <NavLink className="ui button" to="/languages">Languages</NavLink>
-      <div>{`Welcome, ${username}`}</div>
+      <NavLink className="ui inverted basic button nav-button" to="/languages">Languages</NavLink>
+      <div className="">{`Welcome, ${username}`}</div>
+      <div className="right menu ui inverted basic button nav-button">Logout</div>
     </div>
   )
 }
