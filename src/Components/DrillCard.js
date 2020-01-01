@@ -82,7 +82,7 @@ class DrillCard extends React.Component{
           </div>
         </div>
 
-        <div>
+        <div className="drill-choice-container">
           {
             this.state.wordBank.map( word => (
               <DrillChoice

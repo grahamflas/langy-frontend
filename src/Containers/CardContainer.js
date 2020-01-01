@@ -47,14 +47,17 @@ class CardContainer extends React.Component{
   }
 
   render(){
-    let { language, category } = this.props.match.params
+    let { language } = this.props.match.params
+    let capLanguage = language[0].toUpperCase() + language.slice(1)
+
     return (
 
       <div className="card-container">
         <div className="mode-container">
 
           <div className="back-to-decks-btn">
-            <NavLink to={`/decks/${language}`}>Back to decks</NavLink>
+            <i class="arrow alternate circle left outline icon"></i>
+            <NavLink to={`/decks/${language}`}>{`Back to ${capLanguage} decks`}</NavLink>
           </div>
 
           <div className="ui secondary vertical pointing menu mode-menu">
