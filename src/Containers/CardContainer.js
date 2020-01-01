@@ -29,6 +29,8 @@ class CardContainer extends React.Component{
 
   changeMode = (event) => {
     event.persist()
+
+    let clickedMode = event.currentTarget.innerText.toLowerCase()
     let clickedModeID = event.currentTarget.id
     let modeOptions = document.querySelectorAll('.item')
 
@@ -41,6 +43,7 @@ class CardContainer extends React.Component{
       }
     } )
 
+    this.props.history.replace(clickedMode)
   }
 
   render(){
@@ -57,15 +60,15 @@ class CardContainer extends React.Component{
           <div className="ui secondary vertical pointing menu mode-menu">
             
             <div id="study-mode" className="item active" onClick={this.changeMode}> 
-              <NavLink to={`/decks/${language}/${category}/study`}>Study</NavLink>
+              Study
             </div>
     
             <div id="drill-mode" className="item" onClick={this.changeMode}>
-              <NavLink to={`/decks/${language}/${category}/drill`}>Drill</NavLink>
+              Drill
             </div>
     
             <div id="quiz-mode" className="item" onClick={this.changeMode}>
-              <NavLink to={`/decks/${language}/${category}/quiz`}>Quiz</NavLink>
+              Quiz
             </div>
 
           </div>
