@@ -78,7 +78,7 @@ class CardContainer extends React.Component{
 
         </div>
 
-        <div>
+        <div className="card-mode-container">
           <Route exact path="/decks/:language/:category/study" component={StudyCard}/>
           <Route exact path="/decks/:language/:category/drill" component={DrillCard}/>
           <Route exact path="/decks/:language/:category/quiz" component={QuizCard}/> 

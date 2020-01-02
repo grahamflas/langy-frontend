@@ -69,7 +69,7 @@ class DrillCard extends React.Component{
         <div className="drill-card-container">
           <div className="drill-card">
             <div className="drill-card-front">
-              <h1>{deckWords[this.state.currentCard].word_target_language}</h1>
+              <h1 className="card-word">{deckWords[this.state.currentCard].word_target_language}</h1>
               <br/>
               { 
                 deckWords[this.state.currentCard].pronunciation ? (
@@ -80,20 +80,20 @@ class DrillCard extends React.Component{
               }
             </div>
           </div>
+          <div className="drill-choice-container">
+            {
+              this.state.wordBank.map( word => (
+                <DrillChoice
+                  key={word} 
+                  word={word}
+                  correctAnswer={this.state.correctAnswer}
+                  closeModal={ () => this.nextCard(this.state) }
+                />
+              ) )
+            }
+          </div>
         </div>
 
-        <div className="drill-choice-container">
-          {
-            this.state.wordBank.map( word => (
-              <DrillChoice
-                key={word} 
-                word={word}
-                correctAnswer={this.state.correctAnswer}
-                closeModal={ () => this.nextCard(this.state) }
-              />
-            ) )
-          }
-        </div>
     </div>
     )
   }

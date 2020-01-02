@@ -45,19 +45,19 @@ class StudyCard extends React.Component {
             <div className="flip-card-container">
                 <div className="flip-card">
                   <div className="flip-card-front">
-                    <h1>{deckWords[this.state.currentCard].word_target_language}</h1>
+                    <h1 className="card-word">{deckWords[this.state.currentCard].word_target_language}</h1>
                     <br/>
                     { 
                       deckWords[this.state.currentCard].pronunciation ? (
                         <p className="pronunciation">
-                          ( <em>{deckWords[this.state.currentCard].pronunciation}</em> )
+                          ( {deckWords[this.state.currentCard].pronunciation} )
                         </p>
                       ) : null 
                     }
                   </div>
 
                   <div className="flip-card-back">
-                    <p> { deckWords[this.state.currentCard].word_english } </p>
+                    <h1 className="card-word"> { deckWords[this.state.currentCard].word_english } </h1>
                   </div>
                 </div>
             </div>

@@ -136,7 +136,13 @@ html, body {
  width: 30%;
  /* display: flex;
  flex-flow: space-around; */
+ border: 1px solid red;
  
+}
+
+.card-mode-container {
+  width: 70%;
+  border: 1px solid red;
 }
 
 .mode-menu {
@@ -166,6 +172,14 @@ html, body {
   margin-bottom: 90px !important;
 }
 
+.card-word{
+  font-size: 90px;
+}
+
+.pronunciation {
+  font-size: 25px;
+  font-style: italic;
+}
 
 /* _______________ STUDY CARD CSS _______________ */
 
@@ -224,8 +238,8 @@ html, body {
 /* _______________ DRILL CARD CSS _______________ */
 
 .drill-card-container {
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  margin: auto;
   width: 700px;
   height: 433px;
   perspective: 1000px;
@@ -294,7 +308,7 @@ html, body {
 }
 
 .drill-choice:hover {
-  background: #6ACCCE;
+  background: #F5C245;
 }
 
 .quiz-form {
