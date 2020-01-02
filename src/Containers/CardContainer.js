@@ -48,7 +48,7 @@ class CardContainer extends React.Component{
 
   render(){
     let { language } = this.props.match.params
-    let capLanguage = language[0].toUpperCase() + language.slice(1)
+    let { selectedLanguageName } = this.props
 
     return (
 
@@ -57,7 +57,7 @@ class CardContainer extends React.Component{
 
           <div className="back-to-decks-btn">
             <i class="arrow alternate circle left outline icon"></i>
-            <NavLink to={`/decks/${language}`}>{`Back to ${capLanguage} decks`}</NavLink>
+            <NavLink to={`/decks/${language}`}>{`Back to ${selectedLanguageName} decks`}</NavLink>
           </div>
 
           <div className="ui secondary vertical pointing menu mode-menu">
@@ -91,6 +91,7 @@ class CardContainer extends React.Component{
 
 const mapStateToProps = state => ({
   selectedLanguageId: state.selectedLanguage.id,
+  selectedLanguageName: state.selectedLanguage.name,
   selectedDeckId: state.selectedDeck.id
 })
 

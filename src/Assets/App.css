@@ -136,13 +136,11 @@ html, body {
  width: 25%;
  /* display: flex;
  flex-flow: space-around; */
- border: 1px solid red;
  
 }
 
 .card-mode-container {
   width: 75%;
-  border: 1px solid red;
 }
 
 .mode-menu {
@@ -184,8 +182,10 @@ html, body {
 /* _______________ STUDY CARD CSS _______________ */
 
 .flip-card-container {
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  margin: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   width: 700px;
   height: 433px;
   perspective: 1000px;
@@ -294,7 +294,6 @@ html, body {
 }
 
 .drill-choice {
-  border: 1px solid red;
   width: 310px;
   margin: 20px;
   font-size: 20px;
@@ -312,10 +311,6 @@ html, body {
 
 .drill-choice:hover {
   background: #F5C245;
-}
-
-.drill-choice-text {
-  border: 1px solid red;
 }
 
 .quiz-form {
