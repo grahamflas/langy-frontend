@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { BASE_URL } from '../App'
 import { setLanguage, setUserWords } from '../Redux/actions'
 
@@ -26,15 +26,15 @@ class Language extends React.Component{
     } )
       .then( resp => resp.json() )
       .then( wordsArray => this.props.setUserWords( wordsArray ) )
+
+      this.props.history.push(`/decks/${this.props.lang.slug}`)
   }
 
   render(){
     return(
       <div className="language-card" onClick={this.clickHandler} >
        <div className="language-name">
-          <Link className="language-link" to={`/decks/${this.props.lang.slug}`}>
             {this.props.lang.name}
-          </Link>
        </div>
       </div>
     )
@@ -51,4 +51,4 @@ const mapDispatchToProps = dispatch => ( {
 } )
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Language)
+export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Language))

@@ -133,7 +133,7 @@ html, body {
 }
 
 .mode-container {
- width: 30%;
+ width: 25%;
  /* display: flex;
  flex-flow: space-around; */
  border: 1px solid red;
@@ -141,7 +141,7 @@ html, body {
 }
 
 .card-mode-container {
-  width: 70%;
+  width: 75%;
   border: 1px solid red;
 }
 
@@ -294,9 +294,12 @@ html, body {
 }
 
 .drill-choice {
+  border: 1px solid red;
   width: 310px;
   margin: 20px;
-
+  font-size: 20px;
+  padding-top: 10px;
+  text-align: center;
   height: 50px;
   background-color: #FCFBFF;
   border-radius: 10px;
@@ -309,6 +312,10 @@ html, body {
 
 .drill-choice:hover {
   background: #F5C245;
+}
+
+.drill-choice-text {
+  border: 1px solid red;
 }
 
 .quiz-form {
