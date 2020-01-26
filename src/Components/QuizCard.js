@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Swal from 'sweetalert2'
+import ProgressBar from './ProgressBar'
 
 class QuizCard extends React.Component{
   constructor(props){
@@ -105,10 +106,11 @@ class QuizCard extends React.Component{
   }
 
   render(){
-    const { deckWords } = this.props
+    const {currentCard, deckLength} = this.state
+    const {deckWords} = this.props
     return(
       <div>
-
+        <ProgressBar currentCardDisplay={currentCard + 1} deckLength={deckLength}/>
         <div className="drill-card-container">
           <div className="drill-card">
             <div className="drill-card-front">

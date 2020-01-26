@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import ProgressBar from './ProgressBar'
 
 class StudyCard extends React.Component {
 
@@ -35,11 +36,13 @@ class StudyCard extends React.Component {
   }
 
   render(){
-    const { deckWords } = this.props
+    const {currentCard} = this.state
+    const {deckWords} = this.props
 
     {/* for a split second, we're rendering the previous deck. Fix this */}
     return(
       <div>
+         <ProgressBar currentCardDisplay={currentCard + 1} deckLength={deckWords.length}/>
         { deckWords.length > 0 ? (
           <div>
             <div className="flip-card-container">
