@@ -68,7 +68,7 @@ class DrillCard extends React.Component{
     const {currentCard} = this.state
     return(
     <div>
-        <ProgressBar currentCard={currentCard + 1} deckWords={deckWords}/>
+        <ProgressBar currentCardDisplay={currentCard + 1} deckLength={deckWords.length}/>
 
         <div className="drill-card-container">
           <div className="drill-card">
