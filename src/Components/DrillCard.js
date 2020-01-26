@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { BASE_URL } from '../App'
 import DrillChoice from './DrillChoice'
+import ProgressBar from './ProgressBar'
 
 class DrillCard extends React.Component{
   constructor(){
@@ -64,8 +65,11 @@ class DrillCard extends React.Component{
 
   render(){
     const { deckWords } = this.props
+    const {currentCard} = this.state
     return(
     <div>
+        <ProgressBar currentCard={currentCard + 1} deckWords={deckWords}/>
+
         <div className="drill-card-container">
           <div className="drill-card">
             <div className="drill-card-front">
