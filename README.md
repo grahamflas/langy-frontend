@@ -1,68 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+YouTube [video demo](https://www.youtube.com/watch?v=JIN6EXIwLgg)
 
-## Available Scripts
+#### Back-End Repository
+[Langy (Back-End)](https://github.com/grahamflas/langy-backend/tree/master)
 
-In the project directory, you can run:
+To start the application please start the backend (see link above) and run these commands:
+1. npm install
+2. npm start
+3. Enter username: "username", password: "password"
 
-### `yarn start`
+Langy is a flashcard app for learning foreign languages built with React, Redux, and Ruby on Rails. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+It allows users to study and quiz themselves on vocabulary words in six languages:   British English (for fun), French, German, Korean, Persian, Spanish. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Each language has over 100 vocabulary words grouped into 10 thematic flashcard "decks."
 
-### `yarn test`
+The app has three modes: 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+(1) STUDY MODE:  In study mode, the user is familiarizing themself with the words in a selected deck.  THe user sees a flashcard front with a word in the target language. When the user hovers over the flashcard, it flips over to reveal the English translation on the back of the card. The user can flip through the entire deck, forwards and backwards, an unlimited amount of times.
 
-### `yarn build`
+(2) DRILL MODE:  In drill mode, the user sees only the front of the flashcard with the vocabulary word in the target language. Below the card are four multiple choice answers. One answer is correct and the other three are sampled from other words in the selected deck to increase the difficulty. After making a selection, the user is either alerted that their choice was correct and taken to the next card or alerted that their choice was incorrect and allowed to make another choice.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+(3) QUIZ MODE:  In quiz mode, the user only sees the word in the target language and must supply the English translation in an input field. The user's input is case insensitive and whitespace and punctuation are stripped out. Once the user has made a guess for all words in the deck, the user is given a score. If the user supplied the correct translation for each word, they are taken back to the main flashcard deck page for the current language. If the user didn't answer all words correctly, they are given a chance to try again.
