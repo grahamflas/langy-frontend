@@ -1,4 +1,4 @@
-YouTube [video demo] (https://www.youtube.com/watch?v=JIN6EXIwLgg)
+YouTube [video demo](https://www.youtube.com/watch?v=JIN6EXIwLgg)
 
 #### Back-End Repository
 [Langy (Back-End)](https://github.com/grahamflas/langy-backend/tree/master)
