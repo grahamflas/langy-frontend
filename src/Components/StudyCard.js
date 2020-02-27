@@ -42,7 +42,7 @@ class StudyCard extends React.Component {
     {/* for a split second, we're rendering the previous deck. Fix this */}
     return(
       <div>
-         <ProgressBar currentCardDisplay={currentCard + 1} deckLength={deckWords.length}/>
+         {/* <ProgressBar currentCardDisplay={currentCard + 1} deckLength={deckWords.length}/> */}
         { deckWords.length > 0 ? (
           <div>
             <div className="flip-card-container">

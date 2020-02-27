@@ -110,7 +110,7 @@ class QuizCard extends React.Component{
     const {deckWords} = this.props
     return(
       <div>
-        <ProgressBar currentCardDisplay={currentCard + 1} deckLength={deckLength}/>
+        {/* <ProgressBar currentCardDisplay={currentCard + 1} deckLength={deckLength}/> */}
         <div className="drill-card-container">
           <div className="drill-card">
             <div className="drill-card-front">

@@ -4,7 +4,7 @@ export function fetchedUser(userObj){
 
 export function fetchingUser(userInfo) {
   return (dispatch) => {
-    fetch("http://localhost:3000/login", {
+    fetch("https://langy-backend.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
