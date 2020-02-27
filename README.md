@@ -3,9 +3,10 @@ YouTube [video demo](https://www.youtube.com/watch?v=JIN6EXIwLgg)
 #### Back-End Repository
 [Langy (Back-End)](https://github.com/grahamflas/langy-backend/tree/master)
 
-To start the application please run these commands:
+To start the application please start the backend (see link above) and run these commands:
 1. npm install
 2. npm start
+3. Enter username: "username", password: "password"
 
 Langy is a flashcard app for learning foreign languages built with React, Redux, and Ruby on Rails. 
 
