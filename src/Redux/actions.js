@@ -1,10 +1,12 @@
+import { BASE_URL } from "../App"
+
 export function fetchedUser(userObj){
   return { type: "FETCH_USER", payload: userObj }
 }
 
 export function fetchingUser(userInfo) {
   return (dispatch) => {
-    fetch("http://localhost:3000//login", {
+    fetch(`${BASE_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
