@@ -30,7 +30,7 @@ class Login extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className="login-container">
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
             <Grid.Column width={6}>
               <Form className="ui large form" onSubmit={this.submitHandler}>
@@ -49,7 +49,8 @@ class Login extends React.Component {
                             onChange={this.changeHandler}/>
                   </Form.Field>
                 </div>
-                <Button type='submit'>Login</Button>
+                <Button type='submit'
+                        style={{backgroundColor: '#F5C245'}}>Login</Button>
               </Form>
             </Grid.Column>
         </Grid>

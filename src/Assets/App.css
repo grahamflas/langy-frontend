@@ -50,6 +50,10 @@ html, body {
   background-color: rgb(244, 245, 249)!important;
   height: 100%;
 }
+.login-container {
+  background: rgb(43,56,107);
+  background: radial-gradient(circle, rgba(43,56,107,1) 35%, rgba(69,89,172,1) 100%);
+}
 
 .navbar {
   background-color: #4559AC !important;
