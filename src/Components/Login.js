@@ -30,7 +30,7 @@ class Login extends React.Component {
 
   render(){
     return (
-        <Grid className="login-container" textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+        <Grid className="login-container" textAlign='center' verticalAlign='middle'>
             <Grid.Column width={6}>
               <Image className="login-logo" src="https://fontmeme.com/permalink/200302/1067afe7fce910cb27b003ef0ab6d633.png" alt="black-rose-font-langy"/>
               <Form className="ui large form" onSubmit={this.submitHandler}>
