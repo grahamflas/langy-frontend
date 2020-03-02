@@ -32,7 +32,7 @@ class Login extends React.Component {
     return (
       <div>
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-            <Grid.Column style={{maxWidth: 450}}>
+            <Grid.Column width={6}>
               <Form className="ui large form" onSubmit={this.submitHandler}>
                 <div className="ui stacked segment">
                   <Form.Field>
