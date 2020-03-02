@@ -1,4 +1,5 @@
-Live [demo](https://langy-gf.herokuapp.com/)
+[Live demo](https://langy-gf.herokuapp.com/) 
+
 YouTube [video demo](https://www.youtube.com/watch?v=JIN6EXIwLgg)
 
 #### Back-End Repository
