@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchingUser } from '../Redux/actions'
-import { Grid, Button, Form } from 'semantic-ui-react'
+import { Grid, Button, Form, Image } from 'semantic-ui-react'
 
 
 class Login extends React.Component {
@@ -30,9 +30,9 @@ class Login extends React.Component {
 
   render(){
     return (
-      <div className="login-container">
-        <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+        <Grid className="login-container" textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
             <Grid.Column width={6}>
+              <Image className="login-logo" src="https://fontmeme.com/permalink/200302/1067afe7fce910cb27b003ef0ab6d633.png" alt="black-rose-font-langy"/>
               <Form className="ui large form" onSubmit={this.submitHandler}>
                 <div className="ui stacked segment">
                   <Form.Field>
@@ -54,27 +54,7 @@ class Login extends React.Component {
               </Form>
             </Grid.Column>
         </Grid>
-        {/* <form className="ui form" onSubmit={this.submitHandler}>
-          <label htmlFor="username">Username</label>
-          <input 
-            type="text"
-            id="username"
-            name="username"
-            value={this.state.username}
-            onChange={this.changeHandler}
-          />
-
-          <label htmlFor="password">Password</label>
-          <input 
-            type="password"
-            id="password"
-            name="password"
-            value={this.state.password}
-            onChange={this.changeHandler}
-          />
-          <button type="submit">Login</button>
-        </form> */}
-      </div>)
+    )
   }
 
 }
