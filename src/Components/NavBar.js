@@ -10,7 +10,7 @@ const NavBar = (props) => {
       <img className="title" src="https://fontmeme.com/permalink/200101/70bec4dea25e2d54162772b3a5f0e3ac.png" alt="black-rose-font" border="0" />
       <NavLink className="ui inverted basic button nav-button" to="/languages">Languages</NavLink>
       {/* <div className="">{`Welcome, ${username}`}</div> */}
-      <div className="right menu ui inverted basic button nav-button">Logout</div>
+      {/* <div className="right menu ui inverted basic button nav-button" onClick={props.fetchedUser}>Logout</div> */}
     </div>
   )
 }
@@ -18,4 +18,5 @@ const NavBar = (props) => {
 const mapStateToProps = state => ( {
   currentUser: state.currentUser
 } )
+
 export default connect(mapStateToProps) (NavBar)

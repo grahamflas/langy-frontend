@@ -49,8 +49,9 @@ class Login extends React.Component {
                             onChange={this.changeHandler}/>
                   </Form.Field>
                 </div>
+              <p className="new-user-message">New to Langy? Enter a username and password and click "Login or Sign Up"</p>
                 <Button type='submit'
-                        style={{backgroundColor: '#F5C245'}}>Login</Button>
+                        style={{backgroundColor: '#F5C245'}}>Login or Sign Up</Button>
               </Form>
             </Grid.Column>
         </Grid>
