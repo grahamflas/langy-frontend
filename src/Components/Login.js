@@ -31,24 +31,28 @@ class Login extends React.Component {
   render(){
     return (
       <div>
-        <Form className="ui large form" onSubmit={this.submitHandler}>
-          <div className="ui stacked segment">
-            <Form.Field>
-              <label>Username</label>
-              <input  name="username"
-                      value={this.state.username}
-                      onChange={this.changeHandler}/>
-            </Form.Field>
-            <Form.Field>
-              <label>Password</label>
-              <input  type="password" 
-                      name="password"
-                      value={this.state.password}
-                      onChange={this.changeHandler}/>
-            </Form.Field>
-          </div>
-          <Button type='submit'>Login</Button>
-        </Form>
+        <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+            <Grid.Column style={{maxWidth: 450}}>
+              <Form className="ui large form" onSubmit={this.submitHandler}>
+                <div className="ui stacked segment">
+                  <Form.Field>
+                    <label>Username</label>
+                    <input  name="username"
+                            value={this.state.username}
+                            onChange={this.changeHandler}/>
+                  </Form.Field>
+                  <Form.Field>
+                    <label>Password</label>
+                    <input  type="password" 
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.changeHandler}/>
+                  </Form.Field>
+                </div>
+                <Button type='submit'>Login</Button>
+              </Form>
+            </Grid.Column>
+        </Grid>
         {/* <form className="ui form" onSubmit={this.submitHandler}>
           <label htmlFor="username">Username</label>
           <input 
